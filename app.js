@@ -1,6 +1,7 @@
 const SYMBL_DATA_URL = "https://symbl-data-api.herokuapp.com/data"
 import fetch from "node-fetch"
 
+// requesting data
 fetch(SYMBL_DATA_URL)
 .then(res=>{
     if(res.ok){
@@ -12,6 +13,7 @@ fetch(SYMBL_DATA_URL)
     return(res.json());
 })
 .then(data=>{
+    // sorting the data
     data.sort((first,second)=>{
         return(first.id - second.id)
     })
